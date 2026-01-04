@@ -13,7 +13,9 @@ const pool = mysql.createPool({
     database: process.env.DB_NAME || 'hishab_kitab',
     waitForConnections: true,
     connectionLimit: 10,
-    queueLimit: 0
+    queueLimit: 0,
+    enableKeepAlive: true,
+    keepAliveInitialDelay: 0
 });
 
 module.exports = pool.promise();
