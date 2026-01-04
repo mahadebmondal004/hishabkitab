@@ -71,13 +71,13 @@ class RateLimiter {
 // Create rate limiters for different endpoints
 const apiLimiter = new RateLimiter({
     windowMs: 15 * 60 * 1000, // 15 minutes
-    max: 100,
+    max: 100000, // Effectively disabled
     message: 'Too many API requests, please try again later.'
 });
 
 const authLimiter = new RateLimiter({
     windowMs: 15 * 60 * 1000, // 15 minutes
-    max: 5, // Stricter limit for auth endpoints
+    max: 100000, // Effectively disabled
     message: 'Too many login attempts, please try again later.'
 });
 
