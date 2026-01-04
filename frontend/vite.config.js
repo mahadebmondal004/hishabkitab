@@ -86,6 +86,7 @@ export default defineConfig({
         port: 5173,
         strictPort: false, // Allow fallback if port is busy
         host: true, // Listen on all addresses
+        allowedHosts: ['hishabkitab.codteg.com'],
         proxy: {
             '/api': {
                 target: 'http://localhost:5000',
