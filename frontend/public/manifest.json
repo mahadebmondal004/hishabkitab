@@ -1,0 +1,21 @@
+{
+    "short_name": "Hishab Kitab",
+    "name": "Hishab Kitab - Business Accounting",
+    "icons": [
+        {
+            "src": "favicon.png",
+            "sizes": "64x64",
+            "type": "image/png"
+        },
+        {
+            "src": "logo.png",
+            "type": "image/png",
+            "sizes": "192x192 512x512"
+        }
+    ],
+    "start_url": ".",
+    "display": "standalone",
+    "theme_color": "#2563eb",
+    "background_color": "#ffffff",
+    "orientation": "portrait"
+}

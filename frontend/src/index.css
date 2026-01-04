@@ -1,0 +1,94 @@
+@import "tailwindcss";
+
+@variant dark (&:where(.dark, .dark *));
+
+@theme {
+    --color-primary: #3B82F6;
+    --color-secondary: #EF4444;
+    --color-dark: #0f172a;
+    --color-light: #f8fafc;
+    --font-family-outfit: 'Outfit', sans-serif;
+}
+
+/* Global Styles for Mobile App Feel */
+body {
+    background-color: #f1f5f9;
+    color: #334155;
+    -webkit-tap-highlight-color: transparent;
+    padding-bottom: env(safe-area-inset-bottom);
+    min-height: 100vh;
+    margin: 0;
+}
+
+#root {
+    width: 100%;
+    background-color: var(--color-light);
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+}
+
+.dark body {
+    background-color: #0f172a;
+    color: #cbd5e1;
+}
+
+.dark #root {
+    background-color: var(--color-dark);
+}
+
+/* Glassmorphism Utilities */
+.glass {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.dark .glass {
+    background: rgba(15, 23, 42, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* 3D Card Effect */
+.card-3d {
+    background: white;
+    border-radius: 1.5rem;
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.05),
+        0 4px 6px -4px rgba(0, 0, 0, 0.02);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border: 1px solid rgba(0, 0, 0, 0.02);
+}
+
+.dark .card-3d {
+    background: #1e293b;
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.card-3d:active {
+    transform: scale(0.98);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in-up {
+    animation: fadeInUp 0.5s ease-out forwards;
+}
+
+/* Disable scrollbar for clean UI */
+::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+}
