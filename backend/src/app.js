@@ -37,6 +37,7 @@ logger.info('Server starting...', {
 });
 
 // Middleware
+app.set('trust proxy', 1); // Trust Nginx proxy for correct IP rate limiting
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
