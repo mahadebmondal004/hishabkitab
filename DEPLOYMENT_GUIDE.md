@@ -62,8 +62,8 @@ This guide explains how to set up automatic deployment for **Hishab Kitab**. Eve
 
 5.  **Start the Application with PM2**:
     ```bash
-    pm2 start src/app.js --name "hishab-kitab"
-    pm2 save
+    npx pm2 start src/app.js --name "hishab-kitab"
+    npx pm2 save
     ```
 
 ---

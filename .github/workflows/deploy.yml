@@ -30,6 +30,5 @@ jobs:
             cd backend
             npm install --production
 
-            # Restart the application using PM2
-            # Assumes the PM2 process is named 'hishab-kitab'
-            pm2 restart hishab-kitab || pm2 start src/app.js --name "hishab-kitab"
+            # Restart the application using PM2 (via npx to ensure availability)
+            npx pm2 restart hishab-kitab || npx pm2 start src/app.js --name "hishab-kitab"
