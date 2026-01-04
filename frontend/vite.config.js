@@ -26,51 +26,13 @@ export default defineConfig({
                 ]
             },
             workbox: {
-                globPatterns: ['**/*.{js,css,html,ico,png,svg,woff,woff2}'],
+                // Disable offline caching by not precaching anything
+                globPatterns: [],
                 cleanupOutdatedCaches: true,
                 skipWaiting: true,
                 clientsClaim: true,
-                navigateFallback: null,
-                runtimeCaching: [
-                    {
-                        urlPattern: ({ url }) => !url.protocol.startsWith('http'),
-                        handler: 'NetworkOnly',
-                    },
-                    {
-                        urlPattern: /^https:\/\/fonts\.googleapis\.com\/.*/i,
-                        handler: 'CacheFirst',
-                        options: {
-                            cacheName: 'google-fonts-cache',
-                            expiration: {
-                                maxEntries: 10,
-                                maxAgeSeconds: 60 * 60 * 24 * 365
-                            },
-                            cacheableResponse: {
-                                statuses: [0, 200]
-                            }
-                        }
-                    },
-                    {
-                        urlPattern: /\/api\/.*/i,
-                        method: 'GET',
-                        handler: 'NetworkOnly',
-                    },
-                    {
-                        urlPattern: /\/api\/.*/i,
-                        method: 'POST',
-                        handler: 'NetworkOnly',
-                    },
-                    {
-                        urlPattern: /\/api\/.*/i,
-                        method: 'PUT',
-                        handler: 'NetworkOnly',
-                    },
-                    {
-                        urlPattern: /\/api\/.*/i,
-                        method: 'DELETE',
-                        handler: 'NetworkOnly',
-                    }
-                ]
+                // No runtime caching
+                runtimeCaching: []
             }
         })
     ],
