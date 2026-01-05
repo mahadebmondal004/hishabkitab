@@ -21,7 +21,7 @@ jobs:
           port: ${{ secrets.VPS_PORT || 22 }}
           script: |
             # Navigate to the project directory
-            cd /www/wwwroot/hishabkitab.codteg.com
+            cd /www/wwwroot/hishabkitab
 
             # Pull the latest changes
             git pull origin main
